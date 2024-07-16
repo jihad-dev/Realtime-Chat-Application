@@ -2,11 +2,11 @@ import jwt from "jsonwebtoken";
 const isAuthenticated = async (req, res, next) => {
   try {
     const token = req.cookies.token;
+    console.log(token , 'token nai');
     if (!token) {
       return res.status(401).json({ message: "User not authenticated." });
     }
     const decode = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    console.log(decode)
     if (!decode) {
       return res.status(401).json({ message: "Invalid token" });
     }
@@ -21,4 +21,4 @@ export default isAuthenticated;
 const req = {
   id: "",
 };
-req.id = "sdlbgnjdfn";
+req.id = "jksdjfsdfsadhjfsadgasd";

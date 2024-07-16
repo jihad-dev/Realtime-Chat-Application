@@ -64,7 +64,7 @@ export const login = async (req, res) => {
     };
 
     const token = jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {
-      expiresIn: "30 days",
+      expiresIn: "2 days",
     });
 
     return res
