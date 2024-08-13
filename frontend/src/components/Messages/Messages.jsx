@@ -9,7 +9,7 @@ const Messages = () => {
   if (!messages) return;
   return (
     <div className="px-4 overflow-auto flex-1">
-      {messages.map((message) => {
+      {messages && messages.map((message) => {
         return <Message key={message._id} message={message} />;
       })}
     </div>
